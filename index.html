@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RentEase – Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/JAVASCRIPT/EASE-PROJECT/CSS/styles.css"/>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">
+                <img src="/JAVASCRIPT/EASE-PROJECT/IMAGES/RentEaseimage.png" alt="RentEase Logo" class="logo"/>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <a href="index.html" class="btn btn--secondary">Accueil</a>
+            <a href="flats.html" class="btn btn--secondary">Tous les Appartements</a>
+            <a href="profil.html" class="btn btn--secondary">Profil</a>
+        </nav>
+        <div class="header__actions">
+            <span id="user-name"></span>
+            <button id="logout-btn" class="btn btn--secondary">Log out</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="flats-section">
+            <header class="flats-section__header">
+                <h2>Appartements Favoris</h2>
+            </header>
+            <ul id="favorites-list" class="flats-list"></ul>
+        </section>
+    </main>
+    <script src="/JAVASCRIPT/EASE-PROJECT/JS/main.js"></script>
+</body>
+
+</html>

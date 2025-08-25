@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RentEase - Tous les Appartements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/JAVASCRIPT/EASE-PROJECT/CSS/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">
+                <img src="/JAVASCRIPT/EASE-PROJECT/IMAGES/RentEaseimage.png" alt="RentEase Logo" class="logo"/>
+            </a>
+        </div>
+        <div class="header__actions">
+            <button id="btn-new-apartment" class="btn btn--primary">
+                <i class="fas fa-plus"></i>
+                Nouveau
+            </button>
+            <button id="btn-profile" class="btn btn--secondary">
+                <i class="fas fa-user"></i>
+                Profil
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="flats-section">
+            <header class="flats-section__header">
+                <h2>Tous les Appartements</h2>
+                <div class="search-filter">
+                    <label for="sort-select" class="visually-hidden">Trier par</label>
+                    <select id="sort-select" class="search-filter__select">
+                        <option value="">Trier par</option>
+                        <option value="city">Ville</option>
+                        <option value="price">Prix</option>
+                        <option value="area">Superficie</option>
+                        <option value="yearConstruction">Année de construction</option>
+                    </select>
+                    <label for="search-input" class="visually-hidden">Rechercher</label>
+                    <input type="text" id="search-input" class="search-filter__input" placeholder="Rechercher..."/>
+                </div>
+            </header>
+            <ul id="flats-list" class="flats-list">
+               
+            </ul>
+        </section>
+    </main>
+
+    <div class="modal new-apartment-modal" role="dialog" aria-labelledby="new-apartment-title" hidden>
+        <div class="modal-content">
+            <h2 id="new-apartment-title">Ajouter un Nouvel Appartement</h2>
+            <form id="new-apartment-form" class="new-apartment-form" novalidate>
+                <div class="form-group">
+                    <label for="new-name">Nom de l'appartement</label>
+                    <input type="text" id="new-name" name="name" placeholder="Ex: Loft Industriel" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="new-city">Ville</label>
+                    <input type="text" id="new-city" name="city" placeholder="Ex: Paris" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="new-streetName">Nom de la rue</label>
+                    <input type="text" id="new-streetName" name="streetName" placeholder="Ex: Rue des pommes" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="new-streetNumber">Numéro de la rue</label>
+                    <input type="number" id="new-streetNumber" name="streetNumber" min="1" placeholder="Ex: 123" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="new-hasAC">Climatisation</label>
+                    <select id="new-hasAC" name="hasAC" required>
+                        <option value="">Climatisation</option>
+                        <option value="true">Oui</option>
+                        <option value="false">Non</option>
+                    </select>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="new-yearConstruction">Année de construction</label>
+                    <input type="number" id="new-yearConstruction" name="yearConstruction" min="1800" max="2025" placeholder="Ex: 1980" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="new-disponibilityDate">Date de disponibilité</label>
+                    <input type="date" id="new-disponibilityDate" name="disponibilityDate" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="new-price">Prix (€/mois)</label>
+                    <input type="number" id="new-price" name="price" min="0" placeholder="Ex: 1234" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="new-area">Superficie (m²)</label>
+                    <input type="number" id="new-area" name="area" min="10" placeholder="Ex: 123" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn--primary">Enregistrer</button>
+                    <button type="button" class="btn btn--secondary modal-close">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal edit-apartment-modal" role="dialog" aria-labelledby="edit-apartment-title" hidden>
+        <div class="modal-content">
+            <h2 id="edit-apartment-title">Modifier l'Appartement</h2>
+            <form id="edit-apartment-form" class="edit-apartment-form" novalidate>
+                <div class="form-group">
+                    <label for="edit-name">Nom de l'appartement</label>
+                    <input type="text" id="edit-name" name="name" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-city">Ville</label>
+                    <input type="text" id="edit-city" name="city" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-streetName">Nom de la rue</label>
+                    <input type="text" id="edit-streetName" name="streetName" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-streetNumber">Numéro de la rue</label>
+                    <input type="number" id="edit-streetNumber" name="streetNumber" min="1" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-hasAC">Climatisation</label>
+                    <select id="edit-hasAC" name="hasAC" required>
+                        <option value="">Climatisation</option>
+                        <option value="true">Oui</option>
+                        <option value="false">Non</option>
+                    </select>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-yearConstruction">Année de construction</label>
+                    <input type="number" id="edit-yearConstruction" name="yearConstruction" min="1800" max="2024"
+                        required />
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-disponibilityDate">Date de disponibilité</label>
+                    <input type="date" id="edit-disponibilityDate" name="disponibilityDate" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-price">Prix (€/mois)</label>
+                    <input type="number" id="edit-price" name="price" min="0" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="edit-area">Superficie (m²)</label>
+                    <input type="number" id="edit-area" name="area" min="10" required/>
+                    <span class="validation-error"></span>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn--primary">Mettre à jour</button>
+                    <button type="button" class="btn btn--secondary modal-close">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/JAVASCRIPT/EASE-PROJECT/JS/flats2.js"></script>
+</body>
+
+</html>
