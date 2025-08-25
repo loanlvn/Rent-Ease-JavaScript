@@ -26,10 +26,10 @@ This project was a huge milestone in my learning path. Even though it lacked a r
 
 ---
 
-## 📷 Screenshots
+## 🖼️ Screenshots
 
-| ![Menu](https://github.com/loanlvn/<repo-name>/blob/main/menuS3.png?raw=true) | ![Register](https://github.com/loanlvn/<repo-name>/blob/main/registerJSS1.png?raw=true) |
+| ![Menu](https://raw.githubusercontent.com/loanlvn/Rent-Ease-JavaScript/main/menuS3.png) | ![Register](https://raw.githubusercontent.com/loanlvn/Rent-Ease-JavaScript/main/registerJSS1.png) |
 | --- | --- |
-| ![Edit](https://github.com/loanlvn/<repo-name>/blob/main/editFlatsS3.png?raw=true) | ![Flats](https://github.com/loanlvn/<repo-name>/blob/main/flatsJSS2.png?raw=true) |
+| ![Edit](https://raw.githubusercontent.com/loanlvn/Rent-Ease-JavaScript/main/editFlatsS3.png) | ![Flats](https://raw.githubusercontent.com/loanlvn/Rent-Ease-JavaScript/main/flatsJSS2.png) |
 
 ---
