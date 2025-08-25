@@ -33,3 +33,11 @@ This project was a huge milestone in my learning path. Even though it lacked a r
 | ![Edit](https://raw.githubusercontent.com/loanlvn/Rent-Ease-JavaScript/main/editFlatsS3.png) | ![Flats](https://raw.githubusercontent.com/loanlvn/Rent-Ease-JavaScript/main/flatsJSS2.png) |
 
 ---
+
+## 🚀 Getting Started
+Clone the repo and open the app in your browser:
+
+```bash
+git clone https://github.com/loanlvn/Rent-Ease-JavaScript.git
+cd Rent-Ease-JavaScript
+# open index.html in your browser (double-click or use a local server)
